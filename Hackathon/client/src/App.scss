@@ -1,0 +1,40 @@
+@import './scss/bootstrap';
+@import './scss/auth';
+@import './scss/navbar';
+@import './scss/loader';
+@import './scss/home';
+@import './scss/product';
+@import './scss/card';
+@import './scss/checkout';
+@import './scss/dashboard';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Eudoxus Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+// .blur {
+//     position: absolute;
+//     width: 22rem;
+//     height: 14rem;
+//     border-radius: 50%;
+//     background: #a6ddf0;
+//     // background: $green;
+//     filter: blur(200px)
+// }

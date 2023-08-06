@@ -1,0 +1,14 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+
+$custom-colors: (
+    'wheat': #F0F4F3,
+    'red': #E45D6B,
+    'green': #3BB397,
+    'yellow' : #FAD348,
+    'dark-gray': #333333,
+    'medium-gray': #666666,
+    'light-gray': #555555,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors );

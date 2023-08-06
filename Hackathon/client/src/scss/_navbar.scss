@@ -1,0 +1,27 @@
+////// Navbar //////
+
+.nav-home {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-link {
+
+    color: $light !important;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+        color: #333333 !important;
+    }
+
+    &.active {
+        font-weight: bold;
+        color: #333333 !important;
+    }
+
+}

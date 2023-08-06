@@ -1,0 +1,174 @@
+.column {
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bg-style {
+  background: linear-gradient(to right, #3BB397, #C3E7D8);
+  backdrop-filter: blur(8px);
+}
+
+.left-column {
+  background-color: $green;
+  width: 40%;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: -8px;
+    opacity: 0.2;
+    width: 100px;
+    height: 100px;
+    background-color: $red;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.2;
+    width: 25px;
+    height: 25px;
+    background-color: $yellow;
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+
+.right-column {
+  width: 60%;
+}
+
+.right-column2 {
+  width: 50%;
+}
+
+.right-column,
+.right-column2 {
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+  .form-control {
+    font-size: 12px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 100px;
+    height: 65px;
+    background-color: $red;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    opacity: 0.1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 65px;
+    background-color: $yellow;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    opacity: 0.1;
+  }
+}
+
+.random-shapes {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+.shape {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  opacity: 0.03;
+}
+
+.diagonal {
+  background-color: black;
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+  top: 160px;
+  left: 140px;
+}
+
+.triangle {
+  background-color: black;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: -100px;
+  right: 35px;
+}
+
+.auth-btn1,
+.auth-btn1:hover {
+  color: $light;
+  border-radius: 2rem;
+  background-color: transparent;
+  border: 0.5px solid white;
+}
+
+.auth-btn2,
+.auth-btn2:hover {
+  color: $light;
+  border-radius: 2rem;
+  background-color: $green;
+}
+
+.auth-width {
+  width: 65vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .auth-width {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .auth-width {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth-width {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 575.33px) {
+  .right-column {
+    width: 80%;
+  }
+
+  .right-column2 {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .right-column {
+    width: 100%;
+  }
+
+  .right-column2 {
+    width: 95%;
+  }
+}

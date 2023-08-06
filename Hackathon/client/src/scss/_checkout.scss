@@ -1,0 +1,63 @@
+@media screen and (max-width: 1200px) {
+    .checkout-width {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .checkout-width {
+        width: 88%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .checkout-width {
+        width: 91%;
+    }
+}
+
+@media screen and (max-width: 576.33px) {
+    .checkout-width {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .checkout-width {
+        width: 80%;
+    }
+}
+
+.checkout-width {
+
+    input,
+    select,
+    textarea {
+        border-radius: 0;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    button {
+        width: 8.5rem;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #3BB397;
+    }
+
+    h6 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    span,
+    p,
+    label {
+        font-size: 14px;
+    }
+
+}
