@@ -4,21 +4,21 @@ import { FaStar } from "react-icons/fa";
 // import { FiPlus } from 'react-icons/fi';
 // import { HiMinusSm } from 'react-icons/hi';
 
-import products from '../helper/products';
+// import products from '../helper/products';
 import FormatPrice from '../helper/FormatPrice';
 import { Link, useParams } from 'react-router-dom';
 import { useCartContext } from '../contexts/CartContext';
+import { useSelector } from 'react-redux';
 
 export default function SingleProduct() {
 
     let id = useParams().id
     const { addToCart } = useCartContext()
+    const products = useSelector(state => state.ProductReducer?.products)
 
     let singleProduct = products?.find(curElem => {
         return curElem?._id === id
     })
-
-    console.log(singleProduct);
 
     let ratingStar = Array.from({ length: 5 }, curElem => {
         return (
@@ -52,8 +52,8 @@ export default function SingleProduct() {
                     <div className="col-12 col-md-6 text-center product2-images">
                         <div className="row">
                             <div className="col">
-                                <img src={singleProduct?.images[0]} loading='lazy' style={{ width: '80%' }}
-                                    alt={singleProduct?.name} />
+                                <img src={singleProduct?.image ? process.env.REACT_APP_PUBLIC_FOLDER + singleProduct?.image : ''}
+                                    loading='lazy' style={{ width: '80%' }} alt={singleProduct?.name} />
                             </div>
                         </div>
                     </div>

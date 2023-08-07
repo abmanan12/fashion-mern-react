@@ -7,7 +7,7 @@ import FormatPrice from '../helper/FormatPrice';
 
 export default function Product(curElem) {
 
-    const { _id, name, images, price, category, createdAt } = curElem;
+    const { _id, name, image, price, category } = curElem;
 
     const ref = useRef(null)
     const inView = useInView(ref, { once: true })
@@ -36,21 +36,18 @@ export default function Product(curElem) {
                 initial='hidden' className="card rounded-0 border mx-auto my-2 cardWidt bg-white">
                 <Link to={`/singleproduct/${_id}`}>
                     <figure>
-                        <img src={images[0]} alt={name} loading="lazy" className="card-img-top px-2 pt-3" />
+                        <img src={image ? process.env.REACT_APP_PUBLIC_FOLDER + image : ''} alt={name} loading="lazy"
+                            className="card-img-top px-2 pt-3" />
                         <figcaption className="position-absolute border rounded-3 px-2 py-1 bg-light text-green"
                             style={{ top: 30, right: 28 }}>{category}</figcaption>
                     </figure>
                 </Link>
 
-                <div className="card-body pt-0 d-flex justify-content-between">
-                    <span className="card-text">{name.slice(0, 15)}...</span>
-                    <span className="card-text">{<FormatPrice price={price} />}</span>
+                <div className="card-body pt-0">
+                    <div className="card-text">{<FormatPrice price={price} />}</div>
+                    <div className="card-text pt-4">{name.slice(0, 25)}</div>
                 </div>
 
-                <div className="card-body pt-5 d-flex justify-content-between align-items-end">
-                    {/* <span className="card-text" style={{ fontSize: '14px' }}>{city}</span> */}
-                    {/* <span className="card-text" style={{ fontSize: '14px' }}>{moment(new Date(uploadTime)).fromNow()}</span> */}
-                </div>
             </motion.div>
 
         </>

@@ -98,9 +98,6 @@ export default function Register() {
                             <div className="col px-1 px-sm-2">
                                 <input className='form-control' name='name' type="text" onChange={handleChange} placeholder="Enter Name" />
                             </div>
-                            {/* <div className="col px-1 px-sm-2">
-                                <input className='form-control' name='lastname' type="text" onChange={handleChange} placeholder="Last Name" />
-                            </div> */}
                             <div className="col px-1 px-sm-2">
                                 <input className='form-control' name='username' type="text" onChange={handleChange} placeholder="Enter Email" />
                             </div>

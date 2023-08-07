@@ -22,7 +22,7 @@ export default function Navbar() {
     return (
         <>
 
-            <nav className="navbar navbar-expand-md navbar-light bg-green p-3">
+            <nav className="navbar navbar-expand-lg navbar-light bg-green p-3">
                 <div className="container">
 
                     <NavLink to='/' className="navbar-brand"><img src="/assets/images/logo.png"

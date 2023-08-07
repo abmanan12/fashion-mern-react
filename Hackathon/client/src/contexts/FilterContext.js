@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 
 import reducer from '../reducers/FilterReducer'
-import products from '../helper/products'
+import { useSelector } from 'react-redux'
+// import products from '../helper/products'
 
 const FilterContext = createContext()
 
@@ -24,6 +25,7 @@ export default function FilterContextProvider({ children }) {
 
     const [state, dispatch] = useReducer(reducer, initialState)
     const [categoryType, setCategoryType] = useState('')
+    const products = useSelector(state => state.ProductReducer?.products)
 
     const setGridView = () => {
         return dispatch({ type: "SET_GRID_VIEW" });

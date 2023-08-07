@@ -1,152 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-import { Link } from 'react-router-dom';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+import Sidebar from '../../components/Sidebar'
+import Dashboard from '../../components/Dashboard'
+import Nav from '../../components/Nav'
+import AddProduct from '../../components/AddProduct'
+import DashboardProducts from '../../components/DashboardProducts'
 
-const { Header, Content, Footer, Sider } = Layout;
+function Home() {
 
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-
-    const key = String(index + 1);
-    return {
-        key: `sub${key}`,
-        icon: React.createElement(icon),
-        label: `subnav ${key}`,
-        children: new Array(4).fill(null).map((_, j) => {
-            const subKey = index * 2 + j + 1;
-            return {
-                key: subKey,
-                label: `option${subKey}`,
-            };
-        }),
-    };
-});
-
-const Home = () => {
-
-    const year = new Date().getFullYear();
-    const { user } = useSelector(state => state.AuthReducer?.authData)
-    const { token: { colorBgContainer }, } = theme.useToken();
-
-    return (
-        <Layout>
-
-            <Header className='d-flex align-items-center bg-green'>
-                <div className='text-light'>{user?.name}</div>
-            </Header>
-
-            <Content style={{ padding: '0 50px' }}>
-
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item><Link to='/' className='ms-5 text-green footer-link'>Home</Link></Breadcrumb.Item>
-                    <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-                </Breadcrumb>
-
-                <Layout style={{ padding: '24px 0', background: colorBgContainer }}>
-                    <Sider
-                        style={{ background: colorBgContainer }} width={200}>
-                        <Menu
-                            mode="inline"
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            style={{
-                                height: '100%',
-                            }}
-                            items={items2} />
-                    </Sider>
-
-                    <Content
-                        style={{ padding: '0 24px', minHeight: 280 }}>Content
-                    </Content>
-                </Layout>
-            </Content>
-
-            <Footer
-                style={{ textAlign: 'center' }}>
-                Copyright ©{year}. Abdul Manan
-            </Footer>
-
-        </Layout>
-    );
-};
+  const [toggle, setToggle] = useState(true)
+  const [selectedMenuItem, setSelectedMenuItem] = useState('Dashboard');
 
 
-export default Home;
+  const Toggle = () => { setToggle(!toggle) }
 
+  const handleMenuItemClick = (menuItem) => {
+    setSelectedMenuItem(menuItem);
+  };
 
-// import React from 'react'
-// import { useSelector } from 'react-redux'
-// import { Link } from 'react-router-dom'
+  return (
 
-// export default function Home() {
+    <div>
 
-//     const { user } = useSelector(state => state.AuthReducer?.authData)
+      <Nav Toggle={Toggle} />
 
-//     return (
-//         <>
+      <div className='container-fluid bg-hero min-vh-100' style={{ paddingTop: '86px' }}>
 
-//             <header className='dashboard'>
+        <div className='row '>
 
-//                 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+          {toggle && <div className='col-4 col-md-2 position-fixed bg-green' style={{ height: 'calc(100vh - 86px)' }}>
+            <Sidebar onMenuItemClick={handleMenuItemClick} /></div>}
 
-//                     <div className='pt-5 text-muted'>
-//                         <Link to='/' className='ms-5 text-green footer-link'>Home</Link> / Dashboard
-//                     </div>
+          {toggle && <div className='col-4 col-md-2'></div>}
 
-//                     <div class="position-sticky">
-//                         <div class="list-group list-group-flush mx-3 mt-4">
-//                             <ul id="collapseExample1" class="collapse show list-group list-group-flush">
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">List Product</a>
-//                                 </li>
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Create Product</a>
-//                                 </li>
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Edit Product</a>
-//                                 </li>
-//                             </ul>
+          <div className='col'>
 
-//                             {/* <ul id="collapseExample2" class="collapse list-group list-group-flush">
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Link</a>
-//                                 </li>
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Link</a>
-//                                 </li>
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Link</a>
-//                                 </li>
-//                                 <li class="list-group-item py-3">
-//                                     <a href="" class="link text-reset">Link</a>
-//                                 </li>
-//                             </ul> */}
-//                         </div>
-//                     </div>
-//                 </nav>
+            <div className='d-flex align-items-center p-4'>
+              <i className="navbar-brand fa-solid fa-outdent fs-4" style={{ cursor: 'pointer' }} onClick={Toggle}></i>
+              <Link to='/' className='ms-4 text-green footer-link'>Home </Link> / Dashbaord
+            </div>
 
-//                 <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-green fixed-top">
+            <div>
+              {selectedMenuItem === 'Dashboard' && <Dashboard />}
+              {selectedMenuItem === 'AddProduct' && <AddProduct />}
+              {selectedMenuItem === 'GetProducts' && <DashboardProducts />}
+            </div>
 
-//                     <div class="container-fluid">
-//                         <div className='d-flex align-items-center'>
-//                             <Link to='/' class="navbar-brand">
-//                                 <img src="/assets/images/logo.png" alt="Logo" width="140" height="60" />
-//                             </Link>
+          </div>
 
-//                             <div className='text-start'>{user?.name}</div>
-//                         </div>
-//                     </div>
+        </div>
 
-//                 </nav>
+      </div>
+    </div>
 
-//             </header>
+  )
+}
 
-//             <main style={{ marginTop: '58px' }}>
-//                 <div class="container pt-4"></div>
-//             </main>
-
-//         </>
-//     )
-// }
+export default Home

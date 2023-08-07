@@ -16,12 +16,12 @@ router.post('/create-product', async (req, res) => {
 
     try {
 
-        const products = new Product(req.body);
+        const product = new Product(req.body);
 
-        await products.save();
+        await product.save();
 
         res.status(200).send({
-            success: true, products,
+            success: true,
             message: "Product Created Successfully",
         });
 
@@ -33,15 +33,14 @@ router.post('/create-product', async (req, res) => {
 
 
 // get all products
-router.get('/getproducts', async (req, res) => {
+router.get('/getallproducts', async (req, res) => {
 
     try {
 
         const products = await Product.find();
 
         res.status(200).send({
-            success: true, message: "Products ",
-            counTotal: products.length, products,
+            success: true, products,
         });
     }
     catch (error) {

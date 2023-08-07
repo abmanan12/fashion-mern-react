@@ -9,6 +9,7 @@ $custom-colors: (
     'dark-gray': #333333,
     'medium-gray': #666666,
     'light-gray': #555555,
+    'card-color': #E4E9ED
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors );

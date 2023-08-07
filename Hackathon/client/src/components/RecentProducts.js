@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
-import products from '../helper/products'
 import Product from './Product'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../actions/productAction'
 
 
 
 export default function RecentProducts() {
 
+    const dispatch = useDispatch()
+
+    const products = useSelector(state => state.ProductReducer?.recentProducts)
+
+    useEffect(() => {
+        dispatch(getProducts())
+    }, [])
 
     return (
         <>

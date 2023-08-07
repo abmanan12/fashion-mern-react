@@ -17,7 +17,8 @@ export default function ListView({ products }) {
                                     <div className="card rounded-0 p-3 mb-3" key={curElem._id}>
                                         <div className="row d-flex align-items-center">
                                             <div className="col">
-                                                <img src={curElem.images[0]} alt={curElem.name} loading="lazy" style={{ width: "100%", maxHeight: '250px' }} />
+                                                <img src={curElem.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem.image : ''} alt={curElem.name}
+                                                    loading="lazy" style={{ width: "100%", maxHeight: '250px' }} />
                                             </div>
                                             <div className="col ms-3">
                                                 <h4>{curElem.name}</h4>

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from '../contexts/CartContext'
 import FormatPrice from '../helper/FormatPrice'
 
-// import FormatPrice from '../../../helpers/formatPrice'
-
 export default function Checkout() {
 
   const { cart } = useCartContext()

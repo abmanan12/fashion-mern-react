@@ -39,7 +39,7 @@ export default function FilterSection() {
                   </div>
 
                   <div className="row">
-                    <div className="col-12 mb-2">
+                    <div className="col-12 mb-3">
                       <form onSubmit={(e) => e.preventDefault()}>
                         <input
                           type="search"
@@ -52,19 +52,19 @@ export default function FilterSection() {
                       </form>
                     </div>
 
-                    <div className="col-12 mb-2">
+                    <div className="col-12 mb-3">
                       <form>
                         <select className="form-select py-2" name='category' aria-label="Default select example"
                           onChange={updateFilter}>
                           <option hidden value=''>Select Category</option>
                           <option value='shoes'>Shoes</option>
-                          <option value='clothing'>Clothing</option>
-                          <option value='accessories'>Accessories</option>
+                          <option value='clothes'>Clothing</option>
+                          <option value='asseseries'>Accessories</option>
                         </select>
                       </form>
                     </div>
 
-                    <div className="col-12 mb-2">
+                    <div className="col-12 mb-3">
                       <form>
                         <select className="form-select py-2" name='color' aria-label="Default select example"
                           onChange={updateFilter}>
@@ -79,40 +79,6 @@ export default function FilterSection() {
                         </select>
                       </form>
                     </div>
-
-                    {/* <div className="col-12 mb-2">
-                      <select onClick={changeSelectLocationHandler} onChange={updateFilter} name='province'
-                        className="form-select py-2 outline-0" aria-label="Default select example">
-                        <option hidden value=''>Select Province</option>
-                        <option value='Punjab'>Punjab</option>
-                        <option value='Sindh'>Sindh</option>
-                        <option value='KPK'>KPK</option>
-                        <option value='Balochistan'>Balochistan</option>
-                        <option value='Gilgit Baltistan'>Gilgit Baltistan</option>
-                      </select>
-                    </div> */}
-
-                    {/* <div className="col-12 mb-2">
-                      <form>
-                        <select className="form-select py-2" name='categoryName' aria-label="Default select example"
-                          onChange={updateFilter}>
-                          <option hidden value=''>Select City</option>
-                          {locationOptions}
-                        </select>
-                      </form>
-                    </div> */}
-
-                    {/* <div className="col-12 mb-2">
-                      <form>
-                        <select className="form-select py-2 outline-0" name='condition' aria-label="Default select example"
-                          onChange={updateFilter}>
-                          <option hidden value=''>Product Condition</option>
-                          <option value='Fair'>Fair</option>
-                          <option value='Good'>Good</option>
-                          <option value='Excellent'>Excellent</option>
-                        </select>
-                      </form>
-                    </div> */}
 
                     <div className="col-12 pt-4 mb-2">
                       <h5>Price</h5>

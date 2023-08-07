@@ -13,7 +13,8 @@ export const register = (formData) => async (dispatch) => {
         const { data } = await axios.post(`${URL}/register`, formData)
         dispatch({ type: 'AUTH_SUCCESS', payload: data })
 
-    } catch (error) {
+    }
+    catch (error) {
         dispatch({ type: 'AUTH_ERROR' })
         console.log(error?.response.data);
     }
@@ -30,7 +31,8 @@ export const login = (formData) => async (dispatch) => {
         const { data } = await axios.post(`${URL}/login`, formData)
         dispatch({ type: 'AUTH_SUCCESS', payload: data })
 
-    } catch (error) {
+    }
+    catch (error) {
         dispatch({ type: 'AUTH_ERROR' })
         console.log(error?.response.data);
     }
@@ -46,7 +48,8 @@ export const sendEmail = (username) => async (dispatch) => {
         const { data } = await axios.post(`${URL}/sendEmail`, { username })
         return data
 
-    } catch (error) {
+    }
+    catch (error) {
         return error?.response.data
     }
 }
@@ -61,7 +64,8 @@ export const resetPassword = (password, resetToken) => async (dispatch) => {
         const { data } = await axios.post(`${URL}/resetPassword`, { password, resetToken })
         dispatch({ type: 'RESET_SUCCESS', payload: data })
 
-    } catch (error) {
+    }
+    catch (error) {
         return error?.response.data
     }
 }
@@ -70,19 +74,4 @@ export const resetPassword = (password, resetToken) => async (dispatch) => {
 // logout
 export const logout = () => async (dispatch) => {
     dispatch({ type: 'SET_LOGOUT' })
-}
-
-
-// upload image
-export const uploadImage = file => async (dispatch) => {
-
-    try {
-
-        await axios.post(`${URL}/uploadImage`, file)
-
-    } catch (error) {
-        // console.log(error);
-        console.log(error?.response.data);
-    }
-
 }
