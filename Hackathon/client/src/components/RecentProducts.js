@@ -46,7 +46,7 @@ export default function RecentProducts() {
                     }
 
                     <div className='text-center mt-4'>
-                        <Link to='/product' className='btn btn-outline-green btn-2'>MORE PRODUCTS</Link>
+                        <Link to='/product' className='btn btn-outline-green'>MORE PRODUCTS</Link>
                     </div>
 
                 </div>

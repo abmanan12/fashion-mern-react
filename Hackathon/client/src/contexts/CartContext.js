@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
+
 import CartReducer from '../reducers/CartReducer'
 
 const CartContext = createContext()
@@ -22,8 +23,17 @@ export default function CartContextProvider({ children }) {
     const [state, dispatch] = useReducer(CartReducer, initalState)
 
 
-    const addToCart = singleProduct => {
-        dispatch({ type: 'ADD_CART_PRODUCT', payload: singleProduct })
+    const addToCart = (singleProduct, amount) => {
+        dispatch({ type: 'ADD_CART_PRODUCT', payload: { singleProduct, amount } })
+    }
+
+
+    const setIncreased = id => {
+        dispatch({ type: 'SET_INCREASED', payload: id })
+    }
+
+    const setDecreased = id => {
+        dispatch({ type: 'SET_DECREASED', payload: id })
     }
 
 
@@ -39,7 +49,7 @@ export default function CartContextProvider({ children }) {
 
     return (
         <>
-            <CartContext.Provider value={{ ...state, addToCart, removeItem }}>
+            <CartContext.Provider value={{ ...state, addToCart, setIncreased, setDecreased, removeItem }}>
                 {children}
             </CartContext.Provider>
         </>
