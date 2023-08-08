@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useReducer, useState } fro
 
 import reducer from '../reducers/FilterReducer'
 import { useSelector } from 'react-redux'
-// import products from '../helper/products'
 
 const FilterContext = createContext()
 
@@ -15,6 +14,7 @@ const initialState = {
         text: '',
         category: "all",
         color: 'all',
+        size: 'all',
         price: 0,
         maxPrice: 0,
         minPrice: 0,

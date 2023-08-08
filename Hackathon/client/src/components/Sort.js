@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 
+import FilterSection from './FilterSection';
 import { BsFillGridFill, BsList } from "react-icons/bs";
 import { useFilterContext } from '../contexts/FilterContext';
-import FilterSection from './FilterSection';
-// import FilterSection from './FilterSection';
 
 export default function Sort() {
 

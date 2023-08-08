@@ -35,7 +35,7 @@ function Sidebar({ onMenuItemClick }) {
                     <i className="fa-solid fa-check-to-slot fs-5 me-2"></i><span>Products</span></p>
 
                 <p className='list-group-item py-3 bg-green text-light mb-0' style={{ cursor: 'pointer' }}>
-                    <i class="fa-solid fa-arrow-up-right-from-square fs-5 me-2"></i>
+                    <i className="fa-solid fa-arrow-up-right-from-square fs-5 me-2"></i>
                     <span onClick={handleLogOut}>Logout</span>
                 </p>
             </div>

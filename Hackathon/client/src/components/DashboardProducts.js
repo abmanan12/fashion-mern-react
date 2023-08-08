@@ -1,9 +1,34 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+
+import { FaTrash } from 'react-icons/fa'
+import { FiEdit } from 'react-icons/fi'
+import DashboardModal from './DashboardModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteProduct, getProducts } from '../actions/productAction'
 
 export default function DashboardProducts() {
 
+    const dispatch = useDispatch()
+    const [modal, setModal] = useState(false)
+    const [modalProduct, setModalProduct] = useState(null);
     const products = useSelector(state => state.ProductReducer?.products)
+
+
+    const handleDelete = async (id) => {
+        try {
+            await dispatch(deleteProduct(id))
+            await dispatch(getProducts())
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    const openModal = productData => {
+        setModalProduct(productData);
+        setModal(true)
+    };
 
     return (
         <>
@@ -19,6 +44,7 @@ export default function DashboardProducts() {
                         <th scope="col">Name</th>
                         <th scope="col">Category</th>
                         <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
 
@@ -33,12 +59,21 @@ export default function DashboardProducts() {
                                     <td>{curElem?.name}</td>
                                     <td>{curElem?.category}</td>
                                     <td>{curElem?.quantity}</td>
+                                    <td>
+                                        <FiEdit className='text-green' style={{ cursor: 'pointer' }}
+                                            onClick={() => openModal(curElem)} />
+
+                                        <FaTrash className='text-danger ms-3' style={{ cursor: 'pointer' }}
+                                            onClick={() => handleDelete(curElem?._id)} />
+                                    </td>
                                 </tr>
                             ))
                     }
                 </tbody>
 
             </table>
+
+            {modal && <DashboardModal modal={modal} setModal={setModal} modalProduct={modalProduct} />}
 
         </>
     )

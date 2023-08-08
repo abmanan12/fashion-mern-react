@@ -8,7 +8,6 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 import { IoIosListBox } from "react-icons/io";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { AiFillMessage } from "react-icons/ai";
 import { MdPayment } from "react-icons/md";
 
 export default function Features() {

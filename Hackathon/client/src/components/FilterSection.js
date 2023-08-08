@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
 import { useFilterContext } from '../contexts/FilterContext'
-// import { ListProduct } from '../contexts/ListProduct';
 import { Button, Drawer } from '@mui/material';
 import { ImCross } from 'react-icons/im'
 import { MdFilterList } from 'react-icons/md'
@@ -13,26 +12,23 @@ export default function FilterSection() {
 
   const { filters: { price, maxPrice, minPrice }, updateFilter, clearFilter } = useFilterContext();
 
-  // const { changeSelectOptionHandler, options, changeSelectLocationHandler, locationOptions }
-  //   = useContext(ListProduct)
-
   return (
     <>
       <div className='mt-2'>
 
-        <Button style={{ color: 'black' }} onClick={() => setOpen(true)}>
-          <h6 className='fw-bold'>Filter <MdFilterList className='fs-4 ms-1' /></h6>
-        </Button>
+            <Button style={{ color: 'black' }} onClick={() => setOpen(true)}>
+              <h6 className='fw-bold'>Filter <MdFilterList className='fs-4 ms-1' /></h6>
+            </Button>
 
         <Drawer open={open} anchor={"left"} onClose={() => setOpen(false)}
-          PaperProps={{ sx: { marginTop: '75px' } }}>
-          <div style={{ width: 260, marginTop: 25 }} >
+          PaperProps={{ sx: { marginTop: '86px' } }}>
+          <div style={{ width: 260, marginTop: 35 }}>
 
             <div className="container-fluid">
               <div className="row">
                 <div className="col-12 col-lg-10 offset-lg-1">
 
-                  <div className='pb-3 d-flex justify-content-between'>
+                  <div className='pb-4 d-flex justify-content-between'>
                     <h5 className='fw-bold'>Filters:</h5>
                     <h6 className='text-end text-muted' onClick={() => setOpen(false)}
                       style={{ cursor: 'pointer' }}><ImCross /></h6>
@@ -66,6 +62,18 @@ export default function FilterSection() {
 
                     <div className="col-12 mb-3">
                       <form>
+                        <select className="form-select py-2" name='size' aria-label="Default select example"
+                          onChange={updateFilter}>
+                          <option hidden value=''>Select Size</option>
+                          <option value='small'>Small</option>
+                          <option value='medium'>Medium</option>
+                          <option value='large'>Large</option>
+                        </select>
+                      </form>
+                    </div>
+
+                    <div className="col-12 mb-3">
+                      <form>
                         <select className="form-select py-2" name='color' aria-label="Default select example"
                           onChange={updateFilter}>
                           <option hidden value=''>Select Color</option>
@@ -80,7 +88,7 @@ export default function FilterSection() {
                       </form>
                     </div>
 
-                    <div className="col-12 pt-4 mb-2">
+                    <div className="col-12 pt-2 mb-4">
                       <h5>Price</h5>
                       <p className='mb-1'>{<FormatPrice price={price} />}</p>
                       <div>
@@ -89,8 +97,8 @@ export default function FilterSection() {
                       </div>
                     </div>
 
-                    <div className="col-12 text-center">
-                      <button className='btn btn-danger text-light' onClick={clearFilter}>CLEAR FILTERS</button>
+                    <div className="col-12 text-start">
+                      <button className='btn btn-green text-light' onClick={clearFilter}>CLEAR FILTERS</button>
                     </div>
 
                   </div>
