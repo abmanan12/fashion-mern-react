@@ -16,10 +16,10 @@ function Nav() {
 
             <div className='container-fluid'>
 
-                <NavLink to='/' className="navbar-brand"><img src="/assets/images/logo.png"
+                <NavLink to='/' className="navbar-brand ms-2"><img src="/assets/images/logo.png"
                     alt="Logo" width="140" height="60" /></NavLink>
 
-                <h4 className='text-light fw-bold ms-2 me-auto'>{user?.name}</h4>
+                <h4 className='text-light fw-bold ms-2 me-auto mb-0 d-none d-sm-inline-block'>{user?.name}</h4>
 
             </div>
 

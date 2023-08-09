@@ -22,7 +22,7 @@ export default function Navbar() {
     return (
         <>
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-green p-3">
+            <nav className="navbar navbar-expand-lg navbar-light px-3 bg-Footer-bg">
                 <div className="container">
 
                     <NavLink to='/' className="navbar-brand"><img src="/assets/images/logo.png"
@@ -70,8 +70,8 @@ export default function Navbar() {
                         </ul>
 
                         <form className="d-flex justify-content-center mt-4 mt-md-0">
-                            {!user ? <NavLink className='link text-light' to='/auth/login'>LOGIN</NavLink>
-                                : <NavLink className='link text-light' onClick={handleLogOut}>LOGOUT</NavLink>}
+                            {!user ? <NavLink className='link text-H2' to='/auth/login'>LOGIN</NavLink>
+                                : <NavLink className='link text-H2' onClick={handleLogOut}>LOGOUT</NavLink>}
                         </form>
                     </div>
 

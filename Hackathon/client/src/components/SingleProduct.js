@@ -31,72 +31,82 @@ export default function SingleProduct() {
 
             <div ref={messageEndRef}></div>
 
-            <div className='pt-4 text-muted'>
-                <Link to='/' className='ms-5 text-green footer-link'>Home</Link> / {singleProduct?.name}
-            </div>
+            <div className='bg-Others-bg'>
 
-            <div className="container py-5">
-                <div className="row align-items-center">
-
-                    <div className="col-12 col-md-6 text-center product2-images">
-                        <div className="row">
-                            <div className="col">
-                                <img src={singleProduct?.image ? process.env.REACT_APP_PUBLIC_FOLDER + singleProduct?.image : ''}
-                                    loading='lazy' style={{ width: '80%' }} alt={singleProduct?.name} />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-12 col-md-6">
-                        <div className="row pt-4 pt-md-0 px-3 px-md-0">
-
-                            <div className="col">
-                                <h4 className='fw-bold'>{singleProduct?.name}</h4>
-                                <h4 className='fw-bold text-green'><FormatPrice price={singleProduct?.price} /></h4>
-                            </div>
-
-                            <div className="row mt-2" style={{ fontSize: '14px' }}>
-                                <div className="col">
-                                    <span>Size:</span><span className='ms-3 text-green'>{singleProduct?.size}</span>
-                                </div>
-                            </div>
-
-                            <div className="row" style={{ fontSize: '14px' }}>
-                                <div className="col">
-                                    <span>Color:</span><span className='ms-3 text-green'>{singleProduct?.color}</span>
-                                </div>
-                            </div>
-
-                            <div className="row mt-3" style={{ fontSize: '14px' }}>
-                                <div className="col">
-                                    <span>Category:</span><span className='ms-3 text-green'>{singleProduct?.category}</span>
-                                </div>
-                            </div>
-
-                            <div className="row" style={{ fontSize: '14px' }}>
-                                <div className="col">
-                                    <span>Availabilty:</span><span className='ms-3 text-green'>{singleProduct?.quantity > 0 ? 'In Stock' : 'Not Available'}</span>
-                                </div>
-                            </div>
-
-
-                            <div className="row mt-3">
-                                <div className="col">
-                                    <p className='txt-justify' style={{ fontSize: '15px' }}>{singleProduct?.description}</p>
-                                </div>
-                            </div>
-
-                            <hr className='w-75 mt-3' />
-
-                            <AddToCart singleProduct={singleProduct} />
-
-                        </div>
-                    </div>
-
+                <div className='pt-4 text-muted'>
+                    <Link to='/' className='ms-5 text-Pa footer-link'>Home</Link> / {singleProduct?.name}
                 </div>
+
+                <div className="container py-5">
+                    <div className="row align-items-center">
+
+                        <div className="col-12 col-md-6 text-center product2-images">
+                            <div className="row">
+                                <div className="col">
+                                    <img src={singleProduct?.image ? process.env.REACT_APP_PUBLIC_FOLDER + singleProduct?.image : ''}
+                                        loading='lazy' style={{ width: '80%' }} alt={singleProduct?.name} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-12 col-md-6">
+                            <div className="row pt-4 pt-md-0 px-3 px-md-0">
+
+                                <div className="col">
+                                    <h4 className='fw-bold text-H1'>{singleProduct?.name}</h4>
+                                    <h5 className='fw-bold text-H2'><FormatPrice price={singleProduct?.price} /></h5>
+                                </div>
+
+                                <div className="row mt-2" style={{ fontSize: '14px' }}>
+                                    <div className="col">
+                                        <span className='text-H2 fw-bold'>Size:</span><span className='ms-3 text-Pa'>{singleProduct?.size}</span>
+                                    </div>
+                                </div>
+
+                                <div className="row" style={{ fontSize: '14px' }}>
+                                    <div className="col">
+                                        <span className='text-H2 fw-bold'>Color:</span><span className='ms-3 text-Pa'>{singleProduct?.color}</span>
+                                    </div>
+                                </div>
+
+                                <div className="row mt-3" style={{ fontSize: '14px' }}>
+                                    <div className="col">
+                                        <span className='text-H2 fw-bold'>Category:</span><span className='ms-3 text-Pa'>{singleProduct?.category}</span>
+                                    </div>
+                                </div>
+
+                                <div className="row" style={{ fontSize: '14px' }}>
+                                    <div className="col">
+                                        <span className='text-H2 fw-bold'>Shipping:</span><span className='ms-3 text-Pa'>Available</span>
+                                    </div>
+                                </div>
+
+                                <div className="row" style={{ fontSize: '14px' }}>
+                                    <div className="col">
+                                        <span className='text-H2 fw-bold'>Availabilty:</span><span className='ms-3 text-Pa'>{singleProduct?.quantity > 0 ? 'In Stock' : 'Not Available'}</span>
+                                    </div>
+                                </div>
+
+                                <div className="row mt-3">
+                                    <div className="col">
+                                        <p className='txt-justify' style={{ fontSize: '15px' }}>{singleProduct?.description}</p>
+                                    </div>
+                                </div>
+
+                                <hr className='w-75 mt-3' />
+
+                                <AddToCart singleProduct={singleProduct} />
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <UserReviews id={singleProduct?._id} />
+
             </div>
 
-            <UserReviews />
 
         </>
     )

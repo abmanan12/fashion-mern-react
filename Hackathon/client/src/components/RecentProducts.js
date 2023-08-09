@@ -19,14 +19,16 @@ export default function RecentProducts() {
 
     return (
         <>
-            <div className='py-5 bg-light'>
+            <div className='py-5 bg-Others-bg'>
                 <div className="container">
 
                     <div className="row">
                         <div className='col'>
-                            <h3 className='fw-bold text-green mb-3'>Recent Products:</h3>
-                            <p className='text-muted'>These are the most recently added products available for
-                                rent on the platform. User can check details of products by clicking on image.</p>
+                            <h3 className='fw-bold text-H1 mb-3'>Recent Products:</h3>
+                            <p className='text-Pa'>Explore our latest additions, featuring the freshest fashion products
+                                now available for you to rent on our platform. Dive into the details of each item by simply
+                                clicking on its image.</p>
+
                         </div>
                     </div>
 
@@ -46,7 +48,7 @@ export default function RecentProducts() {
                     }
 
                     <div className='text-center mt-4'>
-                        <Link to='/product' className='btn btn-outline-green'>MORE PRODUCTS</Link>
+                        <Link to='/product' className='btn btn-hvr'>MORE PRODUCTS</Link>
                     </div>
 
                 </div>

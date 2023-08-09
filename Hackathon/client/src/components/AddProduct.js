@@ -93,12 +93,12 @@ export default function AddProduct() {
                             <h3 className='text-center fw-bold text-green pt-4 pb-5'>Add Product</h3>
 
                             <div className="row">
-                                <div className="col">
+                                <div className="col-12 col-sm-6">
                                     <input type="text" className='form-control' name='name' placeholder='Title Name'
                                         value={state?.name} onChange={handleChange} />
                                 </div>
 
-                                <div className="col">
+                                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                                     <select className='form-select' name='category' value={state?.category} onChange={handleChange}>
                                         <option value="" hidden>Select Category</option>
                                         <option value="shoes">Shoes</option>
@@ -109,19 +109,19 @@ export default function AddProduct() {
                             </div>
 
                             <div className="row mt-3">
-                                <div className="col">
+                                <div className="col-12 col-sm-6">
                                     <input type="text" className='form-control' name='quantity' placeholder='Enter Quantity'
                                         value={state?.quantity} onChange={handleChange} />
                                 </div>
 
-                                <div className="col">
+                                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                                     <input type="text" className='form-control' name='price' placeholder='Enter Price'
                                         value={state?.price} onChange={handleChange} />
                                 </div>
                             </div>
 
                             <div className="row mt-3">
-                                <div className="col">
+                                <div className="col-12 col-sm-6">
                                     <select className='form-select' name='size' value={state?.size} onChange={handleChange}>
                                         <option value="" hidden>Select Size</option>
                                         <option value="small">Small</option>
@@ -130,7 +130,7 @@ export default function AddProduct() {
                                     </select>
                                 </div>
 
-                                <div className="col">
+                                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                                     <select className='form-select' name='color' value={state?.color} onChange={handleChange}>
                                         <option value="" hidden>Select Color</option>
                                         <option value="red">Red</option>
@@ -145,17 +145,17 @@ export default function AddProduct() {
 
 
                             <div className="row mt-3">
-                                <div className="col">
+                                <div className="col-12 col-sm-6">
                                     <input type="file" className='form-control' onChange={handleImage} />
                                 </div>
 
-                                <div className="col">
+                                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                                     <input type="text" className='form-control' name='description' placeholder='Enter Description'
                                         value={state?.description} onChange={handleChange} />
                                 </div>
                             </div>
 
-                            <div className="row mt-4">
+                            <div className="row mt-4 mb-4 mb-sm-0">
                                 <div className="col">
                                     <button className='btn btn-green text-light'>Add Product</button>
                                 </div>

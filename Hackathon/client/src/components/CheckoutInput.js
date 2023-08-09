@@ -75,20 +75,20 @@ export default function CheckoutInput() {
                 <div className="row my-3">
                     <div className="col">
                         <input type="checkbox" id='account' />
-                        <label className='ms-2' htmlFor='account'>Create an account?</label>
+                        <label className='ms-2 text-H2' htmlFor='account'>Create an account?</label>
                     </div>
                 </div>
 
                 <div className="row mt-5">
                     <div className="col">
-                        <h6>Shipping Details</h6>
+                        <h6 className='text-H2'>Shipping Details</h6>
                     </div>
                 </div>
 
                 <div className="row mt-2">
                     <div className="col">
                         <input type="checkbox" id='address' />
-                        <label className='ms-2' htmlFor='address'>Ship to a different address?</label>
+                        <label className='ms-2 text-H2' htmlFor='address'>Ship to a different address?</label>
                     </div>
                 </div>
 

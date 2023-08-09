@@ -20,7 +20,6 @@ const AuthScema = new mongoose.Schema(
         },
         resetToken: Number,
         resetTokenExpiresAt: Number,
-        // picture: String,
     },
     {
         timestamps: true

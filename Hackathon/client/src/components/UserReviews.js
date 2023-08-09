@@ -1,125 +1,146 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { FaStar } from "react-icons/fa";
+import { Rating } from '@mantine/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIdReviews, publishReview } from '../actions/reviewsAction';
 
-export default function UserReviews() {
+const initialValue = {
+    review: ''
+}
 
-    let ratingStar = Array.from({ length: 5 }, curElem => {
-        return (
-            <FaStar />
-        )
-    })
+export default function UserReviews({ id }) {
+
+    const dispatch = useDispatch()
+    const [rating, setRating] = useState(0)
+    const [state, setState] = useState(initialValue)
+    const { user } = useSelector(state => state.AuthReducer?.authData)
+
+    const { reviews, loading, uploading } = useSelector(state => state?.ReviewsReducer)
+
+    const handleChange = e => {
+        setState({ ...state, [e.target.name]: e.target.value })
+    }
+
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault()
+
+        let userData = state
+        userData.rating = rating
+
+        userData.productId = id
+        userData.name = user?.name
+        userData.userId = user?._id
+        userData.username = user?.username
+
+        try {
+            await dispatch(publishReview(userData))
+            dispatch(getIdReviews(id))
+
+            setState(initialValue)
+            setRating(0)
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    let ratingMessage;
+
+    switch (rating) {
+        case 1:
+            ratingMessage = 'Very Bad'
+            break;
+
+        case 2:
+            ratingMessage = 'Bad'
+            break;
+
+        case 3:
+            ratingMessage = 'Good'
+            break;
+
+        case 4:
+            ratingMessage = 'Very Good'
+            break;
+
+        case 5:
+            ratingMessage = 'Excellent'
+            break;
+
+        default:
+            ratingMessage = 'Select Rating'
+    }
+
+
+    useEffect(() => {
+        dispatch(getIdReviews(id))
+    }, [])
 
     return (
         <>
 
-            <div className="container my-5">
-
-                <div className="row mb-3">
-                    <div className="col">
-                        <span style={{ color: 'red', fontSize: '14px' }}>Note: Reviews Method is Under Development</span>
-                    </div>
-                </div>
+            <div className="container py-5">
 
                 <div className="row product2-reviews px-3 px-md-0">
 
                     <div className="col-12 col-md-6">
-                        <div className="row">
-                            <div className="col-12 col-sm-6">
-                                <div className="border bg-light p-2 content-center flex-column review-center">
-                                    <h5 className='fw-bold mb-0'>Overall</h5>
-                                    <h1 className='text-green mb-0 fw-bold py-2'>4.0</h1>
-                                    <p className='mb-0'>(03 Reviews)</p>
-                                </div>
-                            </div>
 
-                            <div className="col-12 col-sm-6 my-3 my-sm-0 review-center">
-                                <h6 className='fw-bold'>Based on 3 Reviews</h6>
-                                <p className='stars text-warning'>5 Star <span className='mx-1'>{ratingStar}</span> 01</p>
-                                <p className='stars text-warning'>4 Star <span className='mx-1'>{ratingStar}</span> 01</p>
-                                <p className='stars text-warning'>3 Star <span className='mx-1'>{ratingStar}</span> 01</p>
-                                <p className='stars text-warning'>2 Star <span className='mx-1'>{ratingStar}</span> 01</p>
-                                <p className='stars text-warning'>1 Star <span className='mx-1'>{ratingStar}</span> 01</p>
-                            </div>
-                        </div>
+                        {
+                            loading ? <div className="text-green py-3">Loading...</div>
 
-                        <div className="mt-4 d-flex">
-                            <img src="/assets/images/dp.jpg" loading='lazy' alt="internet-error" width={50} height={55} />
-                            <div className='ms-3'>
-                                <h6>Ali Haider</h6>
-                                <p className='stars'><span className='text-warning'>{ratingStar}</span></p>
-                            </div>
-                        </div>
+                                : reviews === 'No reviews found' ? <div className="text-Pa py-5">No reviews Exist</div>
+                                    : reviews?.map(curElem => {
+                                        return (
+                                            <div key={curElem?._id}>
+                                                <div className="mt-4 d-flex align-items-center">
+                                                    <img src="/assets/images/dp.png" loading='lazy' alt="internet-error" width={60} height={50} />
+                                                    <div className='ms-1'>
+                                                        <h6 className='mb-1 text-H2'>{curElem?.name}</h6>
+                                                        <Rating value={curElem?.rating} fractions={2} readOnly size="xs" />
+                                                    </div>
+                                                </div>
 
-                        <div className="row">
-                            <div className="col">
-                                <p className='txt-justify pt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing
-                                    elit. Illo, hic illum expedita fugiat nisi blanditiis ducimus quasi ipsam iste
-                                    eaque quia aperiam inventore, id sequi atque quaerat quos. Minima, nisi?</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-4 d-flex">
-                            <img src="/assets/images/dp.jpg" loading='lazy' alt="internet-error" width={50} height={55} />
-                            <div className='ms-3'>
-                                <h6>Khalid Ahmad</h6>
-                                <p className='stars'><span className='text-warning'>{ratingStar}</span></p>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col">
-                                <p className='txt-justify pt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing
-                                    elit. Illo, hic illum expedita fugiat nisi blanditiis ducimus quasi ipsam iste
-                                    eaque quia aperiam inventore, id sequi atque quaerat quos. Minima, nisi?</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-4 d-flex">
-                            <img src="/assets/images/dp.jpg" loading='lazy' alt="internet-error" width={50} height={55} />
-                            <div className='ms-3'>
-                                <h6>M Usman</h6>
-                                <p className='stars'><span className='text-warning'>{ratingStar}</span></p>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col">
-                                <p className='txt-justify pt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing
-                                    elit. Illo, hic illum expedita fugiat nisi blanditiis ducimus quasi ipsam iste
-                                    eaque quia aperiam inventore, id sequi atque quaerat quos. Minima, nisi?</p>
-                            </div>
-                        </div>
-
+                                                <div className="row">
+                                                    <div className="col">
+                                                        <p className='txt-justify pt-2 mx-lg-3'>{curElem?.review}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                        }
                     </div>
 
                     <div className="col-12 col-md-6 mt-4 mt-md-0">
                         <div className="row">
                             <div className="col">
-                                <h4 className='fw-bold'>Add a Review</h4>
+                                <h5 className='fw-bold text-H2'>Add Review</h5>
                             </div>
                         </div>
 
-                        <div className="row my-2">
-                            <div className="col">
-                                <p className='stars' style={{ fontSize: '14px' }}>Your Rating: <span className='mx-2 text-warning'>
-                                    {ratingStar}</span></p>
-                            </div>
+                        <div className="d-flex align-items-center mb-2">
+                            <Rating value={rating} onChange={setRating} />
+                            <span className='ms-2 text-Pa' style={{ fontSize: '14px' }}>{ratingMessage}</span>
                         </div>
 
                         <div className="row">
                             <div className="col">
-                                <input type="text" className='form-control py-2' placeholder='Your Full Name' />
-                                <input type="email" className='form-control py-2 mt-2' placeholder='Email Address' />
-                                <input type="text" className='form-control py-2 mt-2' placeholder='Phone Number' />
-                                <textarea name="review" style={{ resize: 'none' }} className='form-control mt-2'
-                                    placeholder='Review' rows="3"></textarea>
+                                <input type="text" className='form-control py-2' defaultValue={user?.name} placeholder='Enter Name' />
+
+                                <input type="email" className='form-control py-2 mt-2' defaultValue={user?.username} placeholder='Enter Email' />
+
+                                <textarea style={{ resize: 'none' }} className='form-control mt-2' name="review"
+                                    value={state?.review} placeholder='Enter Review' rows="4" onChange={handleChange}></textarea>
                             </div>
                         </div>
 
                         <div className="row mt-3 text-end">
                             <div className="col">
-                                <button className='btn btn-green text-light'>Submit Now</button>
+                                <button className='btn btn-hvr' onClick={handleSubmit} disabled={uploading}>
+                                    {uploading ? 'sending...' : 'Submit Now'}</button>
                             </div>
                         </div>
                     </div>

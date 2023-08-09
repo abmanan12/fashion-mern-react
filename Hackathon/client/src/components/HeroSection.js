@@ -33,23 +33,26 @@ export default function HeroSection() {
         <>
 
             <div ref={ref}></div>
-            <div className='pt-5 bg-green' style={{ paddingBottom: '65px' }}>
-                <div className="container content-center">
+
+            <div className='bg-Footer-bg content-center' style={{ height: 'calc(100vh - 86px)' }}>
+                <div className="container">
                     <div className="row align-items-center">
 
                         <motion.div variants={animateText} animate={controls} transition={{ duration: 2, delay: 0.25 }}
                             initial='hidden' className="col-12 col-md-6 px-4 px-lg-5">
-                            <h2 className='fw-bold text-light'>Find Your Perfect Rental Solution</h2>
-                            <p className='text-white'>Welcome to our comprehensive rental platform, where you
-                                can find everything you need in one place. We have a wide range of options available
-                                for you to rent so, Browse our extensive collection and make renting a convenient
-                                and hassle-free experience for all your needs.</p>
-                            <Link to='/products' className='btn btn-light text-green mt-2'>GET STARTED</Link>
+                            <h2 className='fw-bold text-H1'>Discover Ideal Fashion Collection</h2>
+                            <p className='text-H2'>Welcome to our all-encompassing fashion haven, where you'll uncover
+                                a diverse array of clothing, shoes, and accessories. Our platform offers a vast selection of
+                                options for your fashion desires. Browse through our extensive assortment and elevate your
+                                fashion choices with a convenient and seamless renting experience.</p>
+
+                            <Link to='/products' className='btn btn-hvr mt-2'>GET STARTED</Link>
                         </motion.div>
 
                         <motion.div variants={animateImg} animate={controls} transition={{ duration: 2, delay: 0.25 }}
                             initial='hidden' className="col-12 col-md-6 text-center mt-5 mt-md-0">
-                            <img className='home-imge' src="/assets/images/rent.png" alt="home" loading="lazy" style={{ width: '90%', borderRadius: '5%' }} />
+                            <img className='home-imge' src="/assets/images/rent.png" alt="home" loading="lazy"
+                                style={{ width: '90%', borderRadius: '5%' }} />
                         </motion.div>
                     </div>
                 </div>

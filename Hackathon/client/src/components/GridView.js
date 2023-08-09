@@ -11,7 +11,7 @@ export default function GridView({ products }) {
           {
             products.map((curElem) => {
               return (
-                <div className="col-12 col-sm-6 col-md-4 col-xl-3" key={curElem.productId}>
+                <div className="col-12 col-sm-6 col-md-4 col-xl-3" key={curElem._id}>
                   <Product {...curElem} />
                 </div>
               )

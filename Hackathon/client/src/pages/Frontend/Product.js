@@ -15,7 +15,7 @@ export default function Product() {
 
   return (
     <>
-      <div className="py-5 bg-light">
+      <div className="py-5 bg-Others-bg">
         <div className="container-fluid">
 
           <div className="row">

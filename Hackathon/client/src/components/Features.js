@@ -44,7 +44,7 @@ export default function Features() {
     return (
         <>
 
-            <div className='bg-light py-5'>
+            <div className='bg-Others-bg py-5'>
                 <div className="container shadow-none px-4 px-lg-5">
 
                     <div className='heroText'>
@@ -52,30 +52,31 @@ export default function Features() {
                     </div>
 
                     <Slider {...settings}>
-                        <div className='text-muted'>
-                            List your items for rent and reach a wider audience. Share your vehicles, electronics,
-                            properties, workers, and household goods with those in need. Start monetizing your
-                            unused assets and make renting a seamless experience for others.
+                        <div className='text-Pa'>
+                            Showcase your fashion-forward collection and reach a wider audience. Display your latest clothes,
+                            shoes, and accessories for rent and connect with fashion enthusiasts. Monetize your trendy pieces
+                            and create a seamless renting experience for style-savvy individuals.
                         </div>
 
-                        <div className='text-muted'>
-                            Discover a vast selection of rental products across various categories. From vehicles
-                            to electronics, properties to workers, find exactly what you need and connect directly
-                            with the owners. Browse, compare, and add items to your cart effortlessly.
+                        <div className='text-Pa'>
+                            Explore a diverse range of fashion products across different categories. From clothing to shoes
+                            and accessories, find the perfect pieces that suit your style. Browse, compare, and effortlessly
+                            add items to your cart, making renting a hassle-free experience for your fashion needs.
                         </div>
 
-                        <div className='text-muted'>
-                            Our platform facilitates seamless communication between borrowers and renters. Contact
-                            the item owners directly, negotiate terms, and ensure a smooth rental experience. Build
-                            trust and establish mutually beneficial relationships.
+                        <div className='text-Pa'>
+                            Share your renting experience with the fashion community. Leave reviews and ratings for items you've
+                            rented, helping others make informed choices. Discover real feedback from fellow fashion enthusiasts
+                            and enhance your renting decisions.
                         </div>
 
-                        <div className='text-muted'>
-                            Simplify your rental process with our intuitive cart system. Add multiple items of interest,
-                            manage your selections, and easily proceed to checkout. Enjoy a hassle-free renting journey
-                            from start to finish.
+                        <div className='text-Pa'>
+                            Simplify your fashion rental journey. Our intuitive cart system streamlines the process. Add your
+                            favorite fashion items, manage your selections, and proceed to checkout effortlessly. Enjoy a
+                            seamless and stylish renting experience from selection to the runway.
                         </div>
                     </Slider>
+
 
                 </div>
 
@@ -84,26 +85,26 @@ export default function Features() {
 
                         <motion.div className="col-6 col-md-3" variants={animateText} animate={controls} initial='hidden'
                             transition={{ duration: 2, delay: 0.25 }}>
-                            <p className='text-muted hero-icons'><IoIosListBox /></p>
-                            <p className='text-muted hero-icon-text'>Order Item</p>
+                            <p className='text-H1 hero-icons'><IoIosListBox /></p>
+                            <p className='text-H1 hero-icon-text'>Order Item</p>
                         </motion.div>
 
                         <motion.div className="col-6 col-md-3" variants={animateText} animate={controls} initial='hidden'
                             transition={{ duration: 2, delay: 0.25 }}>
-                            <p className='text-muted hero-icons'><AiOutlineFileSearch /></p>
-                            <p className='text-muted hero-icon-text'>Search & Filtering</p>
+                            <p className='text-H1 hero-icons'><AiOutlineFileSearch /></p>
+                            <p className='text-H1 hero-icon-text'>Search & Filtering</p>
                         </motion.div>
 
                         <motion.div className="col-6 col-md-3" variants={animateText} animate={controls} initial='hidden'
                             transition={{ duration: 2, delay: 0.25 }}>
-                            <p className='text-muted hero-icons'><BsFillCartCheckFill /></p>
-                            <p className='text-muted hero-icon-text'>Favourite Items</p>
+                            <p className='text-H1 hero-icons'><BsFillCartCheckFill /></p>
+                            <p className='text-H1 hero-icon-text'>Favourite Items</p>
                         </motion.div>
 
                         <motion.div className="col-6 col-md-3" variants={animateText} animate={controls} initial='hidden'
                             transition={{ duration: 2, delay: 0.25 }}>
-                            <p className='text-muted hero-icons'><MdPayment /></p>
-                            <p className='text-muted hero-icon-text'>Payment Method</p>
+                            <p className='text-H1 hero-icons'><MdPayment /></p>
+                            <p className='text-H1 hero-icon-text'>Payment Method</p>
                         </motion.div>
 
                     </div>

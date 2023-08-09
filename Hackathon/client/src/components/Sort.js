@@ -34,7 +34,7 @@ export default function Sort() {
                 onClick={setListView}><BsList /></button>
             </div>
 
-            <div className="col-7 col-sm-6 mb-4">{filterProducts.length} Products Available</div>
+            <div className="col-7 col-sm-6 mb-4 text-Pa">{filterProducts.length} Products Available</div>
 
             <div className="ps-sm-5 col-5 col-sm-6">
               <FilterSection />

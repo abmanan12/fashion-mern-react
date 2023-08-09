@@ -48,7 +48,7 @@ export default function CheckoutAuth() {
 
                                 <div className="row align-items-center">
                                     <div className="col-12 col-sm-6">
-                                        <button className='btn btn-green text-light'>LOGIN</button>
+                                        <button className='btn btn-hvr'>LOGIN</button>
                                     </div>
                                     <div className="col-12 col-sm-6">
                                         <span style={{ cursor: 'pointer' }}><Link className='link' to='/Auth/register'> Create an
@@ -85,7 +85,7 @@ export default function CheckoutAuth() {
 
                         <div className="row ms-sm-3 mt-3">
                             <div className="col">
-                                <button className='btn btn-green text-light p-2' style={{ width: '11rem' }}>APPLY COUPON</button>
+                                <button className='btn btn-hvr p-2' style={{ width: '11rem' }}>APPLY COUPON</button>
                             </div>
                         </div>
 

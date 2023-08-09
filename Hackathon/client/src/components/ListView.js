@@ -13,22 +13,20 @@ export default function ListView({ products }) {
                     {
                         products.map((curElem, i) => {
                             return (
-                                <>
-                                    <div className="card rounded-0 p-3 mb-3" key={curElem._id}>
-                                        <div className="row d-flex align-items-center">
-                                            <div className="col">
-                                                <img src={curElem.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem.image : ''} alt={curElem.name}
-                                                    loading="lazy" style={{ width: "100%", maxHeight: '250px' }} />
-                                            </div>
-                                            <div className="col ms-3">
-                                                <h4>{curElem.name}</h4>
-                                                <p className='my-2'><FormatPrice price={curElem.price} /></p>
-                                                <p>{curElem.description?.slice(0, 30)} ...</p>
-                                                <Link to={`/singleproduct/${curElem._id}`} className='btn btn-outline-green rounded-0'>READ MORE</Link>
-                                            </div>
+                                <div className="card rounded-0 p-3 mb-3" key={curElem._id}>
+                                    <div className="row d-flex align-items-center">
+                                        <div className="col">
+                                            <img src={curElem.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem.image : ''} alt={curElem.name}
+                                                loading="lazy" style={{ width: "100%", maxHeight: '250px' }} />
+                                        </div>
+                                        <div className="col ms-3">
+                                            <h4>{curElem.name}</h4>
+                                            <p className='my-2'><FormatPrice price={curElem.price} /></p>
+                                            <p>{curElem.description?.slice(0, 30)} ...</p>
+                                            <Link to={`/singleproduct/${curElem._id}`} className='btn btn-hvr mt-4'>READ MORE</Link>
                                         </div>
                                     </div>
-                                </>
+                                </div>
                             )
                         })
                     }

@@ -1,0 +1,29 @@
+@media screen and (max-width: 1200px) {
+    .sidebar-width {
+        width: 175px;
+    }
+
+    .pd-left {
+        padding-left: 175px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar-width {
+        width: 100px;
+    }
+
+    .pd-left {
+        padding-left: 100px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .sidebar-width {
+        width: 175px;
+    }
+
+    .pd-left {
+        padding-left: 175px;
+    }
+}

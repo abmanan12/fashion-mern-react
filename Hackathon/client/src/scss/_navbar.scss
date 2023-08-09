@@ -11,17 +11,17 @@
 
 .nav-link {
 
-    color: $light !important;
+    color: $H2 !important;
     position: relative;
     text-transform: uppercase;
 
     &:hover {
-        color: #333333 !important;
+        color: $H1 !important;
     }
 
     &.active {
         font-weight: bold;
-        color: #333333 !important;
+        color: $H1 !important;
     }
 
 }

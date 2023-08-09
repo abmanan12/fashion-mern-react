@@ -36,6 +36,7 @@ const productSchema = mongoose.Schema(
     },
     shipping: {
       type: Boolean,
+      default: true,
     }
   },
   {

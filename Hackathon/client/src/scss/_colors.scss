@@ -1,15 +1,32 @@
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
 
+$wheat: #F0F4F3;
+$red: #E45D6B;
+$green: #3BB397;
+$yellow : #FAD348;
+$H1: #3BB397;
+$H2: #21806A;
+$H3: #A7C4B8;
+$Pa: #789DA4;
+$Nav-bg: #F0F4F3;
+$Footer-bg: #E4E9ED;
+$Hero-bg: #F0F4F3;
+$Others-bg: #F5F7FA;
+
 $custom-colors: (
-    'wheat': #F0F4F3,
-    'red': #E45D6B,
-    'green': #3BB397,
-    'yellow' : #FAD348,
-    'dark-gray': #333333,
-    'medium-gray': #666666,
-    'light-gray': #555555,
-    'card-color': #E4E9ED
+    'wheat': $wheat,
+    'red': $red,
+    'green': $green,
+    'yellow' : $yellow,
+    'H1': $H1,
+    'H2': $H2,
+    'H3': $H3,
+    'Pa': $Pa,
+    'Nav-bg': $Nav-bg,
+    'Footer-bg': $Footer-bg,
+    'Hero-bg': $Hero-bg,
+    'Others-bg': $Others-bg
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors );

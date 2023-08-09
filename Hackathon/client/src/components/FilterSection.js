@@ -14,11 +14,11 @@ export default function FilterSection() {
 
   return (
     <>
-      <div className='mt-2'>
+      <div className='mt-2 bg-Others-bg'>
 
-            <Button style={{ color: 'black' }} onClick={() => setOpen(true)}>
-              <h6 className='fw-bold'>Filter <MdFilterList className='fs-4 ms-1' /></h6>
-            </Button>
+        <Button style={{ color: 'black' }} onClick={() => setOpen(true)}>
+          <h6 className='fw-bold text-H2'>Filter <MdFilterList className='fs-4 ms-1' /></h6>
+        </Button>
 
         <Drawer open={open} anchor={"left"} onClose={() => setOpen(false)}
           PaperProps={{ sx: { marginTop: '86px' } }}>
@@ -29,7 +29,7 @@ export default function FilterSection() {
                 <div className="col-12 col-lg-10 offset-lg-1">
 
                   <div className='pb-4 d-flex justify-content-between'>
-                    <h5 className='fw-bold'>Filters:</h5>
+                    <h5 className='fw-bold text-H2'>Filters:</h5>
                     <h6 className='text-end text-muted' onClick={() => setOpen(false)}
                       style={{ cursor: 'pointer' }}><ImCross /></h6>
                   </div>
@@ -89,7 +89,7 @@ export default function FilterSection() {
                     </div>
 
                     <div className="col-12 pt-2 mb-4">
-                      <h5>Price</h5>
+                      <h5 className='text-H2'>Price</h5>
                       <p className='mb-1'>{<FormatPrice price={price} />}</p>
                       <div>
                         <input type="range" name='price' max={maxPrice} min={minPrice} value={price}
@@ -98,7 +98,7 @@ export default function FilterSection() {
                     </div>
 
                     <div className="col-12 text-start">
-                      <button className='btn btn-green text-light' onClick={clearFilter}>CLEAR FILTERS</button>
+                      <button className='btn btn-hvr' onClick={clearFilter}>CLEAR FILTERS</button>
                     </div>
 
                   </div>

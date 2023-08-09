@@ -28,7 +28,7 @@ export default function Contact() {
     <>
 
       {/* map location */}
-      <div className='mt-4'>
+      <div className='pt-4 bg-Others-bg'>
         <div className="container">
           <div className="row">
             <div className="col">
@@ -48,79 +48,78 @@ export default function Contact() {
       </div>
 
 
-      <div className='my-4 my-lg-5'>
+      <div className='py-4 py-lg-5 bg-Others-bg'>
         <div className="container">
           <div className="row">
 
             {/* Asked Question */}
             <div className="col-12 col-lg-6 pe-lg-5">
 
-              <h6 className='text-muted'>INFORMATION QUESTIONS</h6>
-              <h4 className='fw-bold mb-4 text-green'>FREQUENTLY ASKED QUESTIONS</h4>
+              <h6 className='text-Pa'>FREQUENTLY ASKED QUESTIONS</h6>
+              <h4 className='fw-bold mb-4 text-H2'>GETTING TO KNOW US</h4>
 
               <div className="accordion accordion-flush" id="accordionFlushExample">
                 <div className="accordion-item">
 
                   <h2 className="accordion-header">
-                    <button className="accordion-button collapsed text-muted" type="button" data-bs-toggle="collapse"
+                    <button className="accordion-button collapsed text-H2" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      How do I start the rental application process?
+                      How can I explore the latest fashion items available for purchase?
                     </button>
                   </h2>
 
                   <div id="flush-collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body text-muted" style={{ textAlign: 'justify' }}>
-                      To begin the rental application process, you typically need to complete an application form
-                      provided by the landlord or property management. This form will ask for personal information,
-                      rental history, employment details, and possibly references. Make sure to provide accurate
-                      and complete information to enhance your chances of approval.
+                    <div className="accordion-body text-Pa" style={{ textAlign: 'justify' }}>
+                      To discover the trendiest fashion pieces available for purchase, simply browse through our extensive collection.
+                      You'll find a wide range of clothing, shoes, and accessories to suit your style. Click on the item images
+                      to view details and start your fashion-forward shopping experience.
                     </div>
                   </div>
                 </div>
 
                 <div className="accordion-item pt-4">
                   <h2 className="accordion-header">
-                    <button className="accordion-button collapsed text-muted" type="button" aria-expanded="false"
+                    <button className="accordion-button collapsed text-H2" type="button" aria-expanded="false"
                       data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-controls="flush-collapseTwo">
-                      Is there an application fee, and is it refundable?
+                      How can I add fashion items to my shopping cart?
                     </button>
                   </h2>
 
                   <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body text-muted" style={{ textAlign: 'justify' }}>
-                      Many rental applications require an application fee to cover the costs of processing and screening.
-                      The fee is typically non-refundable, even if your application is not approved. However, it's best
-                      to check with the landlord or property management to confirm their specific policy.
+                    <div className="accordion-body text-Pa" style={{ textAlign: 'justify' }}>
+                      Adding your favorite fashion items to your shopping cart is simple! Just click on the items you love and select
+                      your desired size and quantity. Once you're satisfied with your choices, proceed to the checkout process to
+                      complete your fashionable shopping experience.
                     </div>
                   </div>
                 </div>
 
                 <div className="accordion-item pt-4">
                   <h2 className="accordion-header">
-                    <button className="accordion-button collapsed text-muted" type="button" aria-expanded="false"
+                    <button className="accordion-button collapsed text-H2" type="button" aria-expanded="false"
                       data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-controls="flush-collapseThree">
-                      What should I do if there are maintenance issues in the rental property?
+                      How can I leave reviews and share my shopping experience?
                     </button>
                   </h2>
 
-                  <div id="flush-collapseThree" className="accordion-collapse collapse text-muted" data-bs-parent="#accordionFlushExample">
-                    <div className="accordion-body text-muted" style={{ textAlign: 'justify' }}>
-                      If you encounter maintenance issues, report them to the landlord or property management as soon
-                      as possible. Provide a clear and detailed description of the problem. It is the landlord's
-                      responsibility to address maintenance and repair issues in a timely manner.
+                  <div id="flush-collapseThree" className="accordion-collapse collapse text-Pa" data-bs-parent="#accordionFlushExample">
+                    <div className="accordion-body text-Pa" style={{ textAlign: 'justify' }}>
+                      We encourage you to share your shopping journey with the community! After purchasing an item, you can leave
+                      reviews and ratings for the fashion pieces you've experienced. Your feedback helps other fashion enthusiasts
+                      make informed choices and enhances their shopping experience as well.
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
 
-            {/* Contact Form */}
-            <div className="col-12 col-lg-6 mt-4 mt-lg-0">
 
-              <h6 className='text-muted'>INFORMATION ABOUT US</h6>
-              <h4 className='fw-bold mb-4 text-green'>CONTACT US FOR ANY QUESTIONS</h4>
+            {/* Contact Form */}
+            <div className="col-12 col-lg-6 pt-4 pt-lg-0">
+
+              <h6 className='text-Pa'>INFORMATION ABOUT US</h6>
+              <h4 className='fw-bold mb-4 text-H2'>CONTACT US FOR ANY QUESTIONS</h4>
 
               <div className="row">
                 <div className="col-12 col-md-6">
@@ -155,7 +154,7 @@ export default function Contact() {
 
               <div className="row mt-3 mt-md-4">
                 <div className="col">
-                  <button className='btn btn-green text-light' onClick={handleSubmit}>SEND QUESTION</button>
+                  <button className='btn btn-hvr' onClick={handleSubmit}>SEND QUESTION</button>
                 </div>
               </div>
 

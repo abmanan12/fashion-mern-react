@@ -10,24 +10,17 @@ const initialState = {
     country: '',
     password: '',
     cpassword: '',
-    // picture: null
 }
 
 export default function Register() {
 
     const disptach = useDispatch()
     const [state, setState] = useState(initialState)
-    // const [img, setImg] = useState(null)
 
     const handleChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value })
     }
 
-    // const handleImage = (e) => {
-    //     if (e.target.files && e.target.files[0]) {
-    //         setImg(e.target.files[0])
-    //     }
-    // }
 
     const handleSubmit = async (e) => {
 
@@ -37,30 +30,6 @@ export default function Register() {
             console.log('Passwords do not match');
             return
         }
-
-        // let userData = state
-
-        // upload image
-        // if (img) {
-
-        //     const data = new FormData()
-        //     const filename = Date.now() + img?.name
-        //     data.append('filename', filename)
-        //     data.append('file', img)
-        //     userData.picture = filename
-
-        //     try {
-        //         await disptach(uploadImage(data))
-        //     }
-        //     catch (error) {
-        //         console.log(error);
-        //     }
-        // }
-
-        // else {
-        //     console.log('No image selected');
-        //     return
-        // }
 
         // callregister api
         try {
@@ -99,7 +68,7 @@ export default function Register() {
                                 <input className='form-control' name='name' type="text" onChange={handleChange} placeholder="Enter Name" />
                             </div>
                             <div className="col px-1 px-sm-2">
-                                <input className='form-control' name='username' type="text" onChange={handleChange} placeholder="Enter Email" />
+                                <input className='form-control' name='username' type="email" onChange={handleChange} placeholder="Enter Email" />
                             </div>
                         </div>
 

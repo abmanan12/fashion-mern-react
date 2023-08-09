@@ -33,45 +33,49 @@ export default function DashboardProducts() {
     return (
         <>
 
-            <table className="table caption-top bg-white rounded mt-4">
+            <div className="container-fluid">
+                <div className="table-responsive">
+                    <table className="table caption-top bg-white rounded mt-4">
 
-                <caption className='text-green text-center fw-bold fs-4 pb-4'>All Products</caption>
+                        <caption className='text-green text-center fw-bold fs-4 pb-4'>All Products</caption>
 
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
 
-                <tbody>
-                    {
-                        !products.length ? <td colSpan="5">No Item Exist</td>
-                            : products.map((curElem, i) => (
-                                <tr key={i} className='align-middle'>
-                                    <th scope="row">{i + 1}</th>
-                                    <td><img src={curElem?.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem?.image : ''}
-                                        alt={curElem?.name} width="50" height='40' /></td>
-                                    <td>{curElem?.name}</td>
-                                    <td>{curElem?.category}</td>
-                                    <td>{curElem?.quantity}</td>
-                                    <td>
-                                        <FiEdit className='text-green' style={{ cursor: 'pointer' }}
-                                            onClick={() => openModal(curElem)} />
+                        <tbody>
+                            {
+                                !products.length ? <td colSpan="5">No Item Exist</td>
+                                    : products.map((curElem, i) => (
+                                        <tr key={i} className='align-middle'>
+                                            <th scope="row">{i + 1}</th>
+                                            <td><img src={curElem?.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem?.image : ''}
+                                                alt={curElem?.name} width="50" height='40' /></td>
+                                            <td>{curElem?.name}</td>
+                                            <td>{curElem?.category}</td>
+                                            <td>{curElem?.quantity}</td>
+                                            <td>
+                                                <FiEdit className='text-green' style={{ cursor: 'pointer' }}
+                                                    onClick={() => openModal(curElem)} />
 
-                                        <FaTrash className='text-danger ms-3' style={{ cursor: 'pointer' }}
-                                            onClick={() => handleDelete(curElem?._id)} />
-                                    </td>
-                                </tr>
-                            ))
-                    }
-                </tbody>
+                                                <FaTrash className='text-danger ms-3' style={{ cursor: 'pointer' }}
+                                                    onClick={() => handleDelete(curElem?._id)} />
+                                            </td>
+                                        </tr>
+                                    ))
+                            }
+                        </tbody>
 
-            </table>
+                    </table>
+                </div>
+            </div>
 
             {modal && <DashboardModal modal={modal} setModal={setModal} modalProduct={modalProduct} />}
 

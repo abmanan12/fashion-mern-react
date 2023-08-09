@@ -12,7 +12,7 @@
 
 // link style
 .link {
-    color: #3BB397;
+    color: $H2;
     text-decoration: none;
 }
 
@@ -23,73 +23,63 @@
 textarea:focus {
     outline: none;
     box-shadow: none;
-    border: 0.2px solid #3BB397;
+    border: 0.2px solid $H2;
 }
 
 
 /////////// Go To Top //////////
 
-.top-btn {
-    font-size: 0.9rem;
-    width: 2rem;
-    height: 2rem;
-    color: #fff;
-    background-color: #6c757d;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 4rem;
-    right: 1rem;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+// .top-btn {
+//     font-size: 0.9rem;
+//     width: 2rem;
+//     height: 2rem;
+//     color: #fff;
+//     background-color: #6c757d;
+//     border-radius: 50%;
+//     position: fixed;
+//     bottom: 4rem;
+//     right: 1rem;
+//     z-index: 10;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     cursor: pointer;
 
-    p {
-        animation: gototop 1.5s linear infinite alternate-reverse;
-    }
-}
+//     p {
+//         animation: gototop 1.5s linear infinite alternate-reverse;
+//     }
+// }
 
-@keyframes gototop {
-    0% {
-        transform: translateY(-0.2rem);
-    }
+// @keyframes gototop {
+//     0% {
+//         transform: translateY(-0.2rem);
+//     }
 
-    100% {
-        transform: translateY(0.3rem);
-    }
-}
+//     100% {
+//         transform: translateY(0.3rem);
+//     }
+// }
 
 
 // paragraph
 p {
+    color: $Pa;
     text-align: justify;
 }
 
 
 // buttons
-.btn-1 {
-    color: #3BB397;
+.btn-hvr {
+    color: $wheat;
     min-width: 9rem;
-    background-color: $light;
-    padding-top: 0.60rem;
-    padding-bottom: 0.60rem;
-
-    // &:hover {
-    //     color: $info;
-    //     background-color: $light;
-    // }
-
-}
-
-.btn-2 {
-    min-width: 9rem;
+    background-color: $H1;
     padding-top: 0.60rem;
     padding-bottom: 0.60rem;
 
     &:hover {
-        color: $light;
-        background-color: $info;
+        color: $H1;
+        background-color: $wheat;
+        border: 1px solid $H1;
     }
 
 }
@@ -126,6 +116,7 @@ p {
 
 // footer
 .footer-link {
+    color: $Pa;
     text-decoration: none;
 }
 

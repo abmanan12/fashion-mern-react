@@ -21,7 +21,7 @@ export default function AddToCart({ singleProduct }) {
     return (
         <>
 
-            <div className='mt-3' style={{width: '9rem', border: '1px solid', borderRadius: '20px'}}>
+            <div className='mt-3 ms-2' style={{width: '9rem', border: '1px solid', borderRadius: '20px'}}>
                 <CardAmountToggle amount={amount} setIncreased={setIncreased} setDecreased={setDecreased} />
             </div>
 

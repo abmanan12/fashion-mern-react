@@ -38,14 +38,14 @@ export default function Product(curElem) {
                     <figure>
                         <img src={image ? process.env.REACT_APP_PUBLIC_FOLDER + image : ''} alt={name} loading="lazy"
                             className="card-img-top px-2 pt-3" />
-                        <figcaption className="position-absolute border rounded-3 px-2 py-1 bg-light text-green"
+                        <figcaption className="position-absolute border rounded-3 px-2 py-1 bg-light text-H2"
                             style={{ top: 30, right: 28 }}>{category}</figcaption>
                     </figure>
                 </Link>
 
                 <div className="card-body pt-0">
-                    <div className="card-text">{<FormatPrice price={price} />}</div>
-                    <div className="card-text pt-4">{name.slice(0, 25)}</div>
+                    <div className="text-Pa">{<FormatPrice price={price} />}</div>
+                    <div className="text-Pa pt-4">{name.slice(0, 25)}</div>
                 </div>
 
             </motion.div>

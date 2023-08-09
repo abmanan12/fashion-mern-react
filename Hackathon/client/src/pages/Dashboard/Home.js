@@ -6,17 +6,19 @@ import Dashboard from '../../components/Dashboard'
 import Nav from '../../components/Nav'
 import AddProduct from '../../components/AddProduct'
 import DashboardProducts from '../../components/DashboardProducts'
+import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 
 function Home() {
 
   const [toggle, setToggle] = useState(true)
-  const [selectedMenuItem, setSelectedMenuItem] = useState('Dashboard');
+  const [selectedMenuItem, setSelectedMenuItem] = useState(localStorage.getItem('selectedMenuItem') || 'Dashboard');
 
 
   const Toggle = () => { setToggle(!toggle) }
 
   const handleMenuItemClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
+    localStorage.setItem('selectedMenuItem', menuItem);
   };
 
   return (
@@ -29,16 +31,15 @@ function Home() {
 
         <div className='row '>
 
-          {toggle && <div className='col-4 col-md-2 position-fixed bg-green' style={{ height: 'calc(100vh - 86px)' }}>
-            <Sidebar onMenuItemClick={handleMenuItemClick} /></div>}
+          {toggle && <div className='sidebar-width position-fixed bg-green' style={{ height: 'calc(100vh - 86px)' }}>
+            <Sidebar onMenuItemClick={handleMenuItemClick} activeMenuItem={selectedMenuItem} /></div>}
 
-          {toggle && <div className='col-4 col-md-2'></div>}
-
-          <div className='col'>
+          <div className={toggle ? 'pd-left' : ''}>
 
             <div className='d-flex align-items-center p-4'>
-              <i className="navbar-brand fa-solid fa-outdent fs-4" style={{ cursor: 'pointer' }} onClick={Toggle}></i>
-              <Link to='/' className='ms-4 text-green footer-link'>Home </Link> / Dashbaord
+              {toggle ? <IoIosArrowDropleft style={{ cursor: 'pointer', fontSize: '24px' }} onClick={Toggle} />
+                : <IoIosArrowDropright style={{ cursor: 'pointer', fontSize: '24px' }} onClick={Toggle} />}
+              <Link to='/' className='ms-3 text-green footer-link'>Home </Link><span className='d-none d-sm-inline-block'> / Dashbaord</span>
             </div>
 
             <div>
