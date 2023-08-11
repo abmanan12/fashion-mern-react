@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 import AddToCart from './AddToCart';
+import { Rating } from '@mantine/core';
 import UserReviews from './UserReviews';
 import { useSelector } from 'react-redux';
 import FormatPrice from '../helper/FormatPrice';
@@ -9,11 +10,26 @@ import { Link, useParams } from 'react-router-dom';
 export default function SingleProduct() {
 
     let id = useParams().id
+    const { user } = useSelector(state => state.AuthReducer?.authData)
     const products = useSelector(state => state.ProductReducer?.products)
+    const { reviews, loading, uploading } = useSelector(state => state?.ReviewsReducer)
+
 
     let singleProduct = products?.find(curElem => {
         return curElem?._id === id
     })
+
+
+    let ratings = reviews !== 'No reviews found' && reviews?.map((curElem) => curElem.rating);
+    let reviewLength = ratings && ratings?.length
+
+    const totalRating = ratings && ratings?.reduce((initialVal, curVal) => {
+        return initialVal + curVal
+    }, 0)
+
+
+    let cartData = singleProduct
+    cartData.userId = user?._id
 
 
     const messageEndRef = useRef()
@@ -87,7 +103,18 @@ export default function SingleProduct() {
                                     </div>
                                 </div>
 
-                                <div className="row mt-3">
+
+                                <div className="row mt-3" style={{ fontSize: '14px' }}>
+
+                                    {!ratings ? <span className='text-Pa'>No Reviews</span>
+                                        : <div className="col d-flex align-items-center">
+                                            <span><Rating value={totalRating / reviewLength} fractions={2} readOnly size="xs" /></span>
+                                            <span className='text-Pa ms-2'>({reviewLength} reviews)</span>
+                                        </div>}
+
+                                </div>
+
+                                <div className="row mt-2">
                                     <div className="col">
                                         <p className='txt-justify' style={{ fontSize: '15px' }}>{singleProduct?.description}</p>
                                     </div>
@@ -95,7 +122,7 @@ export default function SingleProduct() {
 
                                 <hr className='w-75 mt-3' />
 
-                                <AddToCart singleProduct={singleProduct} />
+                                <AddToCart singleProduct={cartData} />
 
                             </div>
                         </div>

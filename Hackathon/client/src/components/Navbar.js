@@ -14,6 +14,10 @@ export default function Navbar() {
     const { cart } = useCartContext()
     const { user } = useSelector(state => state.AuthReducer?.authData)
 
+    let userProduct = cart?.filter(curElem => {
+        return curElem?.userId === user?._id
+    })
+
     const handleLogOut = async () => {
         await dispatch(logout())
         navigate('/')
@@ -62,7 +66,7 @@ export default function Navbar() {
                                 <NavLink to='/cart' className="nav-link">
                                     <span className="position-relative"><ShoppingCart style={{ fontSize: '1.4rem' }} />
                                         <span style={{ fontSize: '10px' }} className="position-absolute badge top-0  
-                                         translate-middle text-info rounded-pill bg-light">{cart?.length}</span>
+                                         translate-middle text-info rounded-pill bg-light">{user ? userProduct?.length : 0}</span>
                                     </span>
                                 </NavLink>
                             </li>

@@ -2,12 +2,11 @@
   position: relative;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-.bg-style {
-  background-color: #F0F4F3;
-  // backdrop-filter: blur(8px);
-  // background: linear-gradient(to right, #3BB397, #C3E7D8);
+  &.form-control {
+    padding: 3px auto;
+  }
+
 }
 
 .left-column {
@@ -61,6 +60,8 @@
 
   .form-control {
     font-size: 12px;
+    padding-top: 9px;
+    padding-bottom: 9px;
   }
 
   &::before {

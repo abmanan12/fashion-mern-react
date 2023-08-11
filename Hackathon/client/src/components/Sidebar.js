@@ -20,17 +20,17 @@ function Sidebar({ onMenuItemClick, activeMenuItem }) {
 
             <div className='list-group list-group-flush mt-2'>
 
-                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'Dashboard' ? 'text-dark fw-bold' : 'text-light'}`}
+                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'Dashboard' ? 'text-dark fw-bold' : 'text-Footer-bg'}`}
                     style={{ cursor: 'pointer' }} onClick={() => onMenuItemClick('Dashboard')}>
                     <i className="fa-solid fa-chart-line fs-5 me-2"></i><span className='d-none d-lg-inline-block'>Analysis</span>
                 </div>
 
-                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'AddProduct' ? 'text-dark fw-bold' : 'text-light'}`}
+                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'AddProduct' ? 'text-dark fw-bold' : 'text-Footer-bg'}`}
                     style={{ cursor: 'pointer' }} onClick={() => onMenuItemClick('AddProduct')}>
                     <i className="fa-solid fa-list-check fs-5 me-2"></i><span className='d-none d-lg-inline-block'>Add Item</span>
                 </div>
 
-                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'GetProducts' ? 'text-dark fw-bold' : 'text-light'}`}
+                <div className={`list-group-item bg-green py-3 mb-0 ${activeMenuItem === 'GetProducts' ? 'text-dark fw-bold' : 'text-Footer-bg'}`}
                     style={{ cursor: 'pointer' }} onClick={() => onMenuItemClick('GetProducts')}>
                     <i className="fa-solid fa-check-to-slot fs-5 me-2"></i><span className='d-none d-lg-inline-block'>Product</span></div>
 

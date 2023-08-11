@@ -37,16 +37,16 @@ export default function DashboardProducts() {
                 <div className="table-responsive">
                     <table className="table caption-top bg-white rounded mt-4">
 
-                        <caption className='text-green text-center fw-bold fs-4 pb-4'>All Products</caption>
+                        <caption className='text-H2 text-center fw-bold fs-4 pb-4'>All Products</caption>
 
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">image</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Action</th>
+                                <th className='text-H2' scope="col">#</th>
+                                <th className='text-H2' scope="col">image</th>
+                                <th className='text-H2' scope="col">Name</th>
+                                <th className='text-H2' scope="col">Category</th>
+                                <th className='text-H2' scope="col">Quantity</th>
+                                <th className='text-H2' scope="col">Action</th>
                             </tr>
                         </thead>
 
@@ -55,12 +55,12 @@ export default function DashboardProducts() {
                                 !products.length ? <td colSpan="5">No Item Exist</td>
                                     : products.map((curElem, i) => (
                                         <tr key={i} className='align-middle'>
-                                            <th scope="row">{i + 1}</th>
-                                            <td><img src={curElem?.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem?.image : ''}
+                                            <th className='text-Pa' scope="row">{i + 1}</th>
+                                            <td className='text-Pa'><img src={curElem?.image ? process.env.REACT_APP_PUBLIC_FOLDER + curElem?.image : ''}
                                                 alt={curElem?.name} width="50" height='40' /></td>
-                                            <td>{curElem?.name}</td>
-                                            <td>{curElem?.category}</td>
-                                            <td>{curElem?.quantity}</td>
+                                            <td className='text-Pa'>{curElem?.name}</td>
+                                            <td className='text-Pa'>{curElem?.category}</td>
+                                            <td className='text-Pa'>{curElem?.quantity}</td>
                                             <td>
                                                 <FiEdit className='text-green' style={{ cursor: 'pointer' }}
                                                     onClick={() => openModal(curElem)} />

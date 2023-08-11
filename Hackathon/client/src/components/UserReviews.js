@@ -26,6 +26,14 @@ export default function UserReviews({ id }) {
 
         e.preventDefault()
 
+        if (rating === 0) {
+            return console.log('Please select rating');
+        }
+
+        if (state.review.length < 4) {
+            return console.log('Enter review properly');
+        }
+
         let userData = state
         userData.rating = rating
 
@@ -128,9 +136,9 @@ export default function UserReviews({ id }) {
 
                         <div className="row">
                             <div className="col">
-                                <input type="text" className='form-control py-2' defaultValue={user?.name} placeholder='Enter Name' />
+                                <input type="text" className='form-control py-2' defaultValue={user?.name} readOnly placeholder='Enter Name' />
 
-                                <input type="email" className='form-control py-2 mt-2' defaultValue={user?.username} placeholder='Enter Email' />
+                                <input type="email" className='form-control py-2 mt-2' defaultValue={user?.username} readOnly placeholder='Enter Email' />
 
                                 <textarea style={{ resize: 'none' }} className='form-control mt-2' name="review"
                                     value={state?.review} placeholder='Enter Review' rows="4" onChange={handleChange}></textarea>

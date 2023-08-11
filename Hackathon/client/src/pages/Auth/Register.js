@@ -44,13 +44,13 @@ export default function Register() {
 
     return (
 
-        <div className='bg-style'>
+        <div className='bg-Footer-bg'>
             <div className="container content-center vh-100">
                 <div className="row mx-auto auth-width justify-content-center" style={{ minHeight: '60vh' }}>
 
                     <div className="column left-column d-none d-sm-flex">
-                        <h3>Welcome Back!</h3>
-                        <p className='mt-3 mb-5'>To keep connected with us, please login with your personal info</p>
+                        <h3 className='text-Footer-bg'>Welcome Back!</h3>
+                        <p className='mt-3 mb-5 text-Footer-bg'>To keep connected with us, please login with your personal info</p>
                         <Link to='/auth/login' className="btn px-5 py-2 auth-btn1">LOGIN</Link>
 
                         <div className="random-shapes">
@@ -61,7 +61,7 @@ export default function Register() {
 
                     <div className="column right-column text-center">
 
-                        <h3 className='mt-4'>Create Account</h3>
+                        <h3 className='mt-4 text-H2'>Create Account</h3>
 
                         <div className="row mt-5">
                             <div className="col px-1 px-sm-2">

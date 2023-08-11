@@ -26,7 +26,7 @@ export default function RecentProducts() {
                         <div className='col'>
                             <h3 className='fw-bold text-H1 mb-3'>Recent Products:</h3>
                             <p className='text-Pa'>Explore our latest additions, featuring the freshest fashion products
-                                now available for you to rent on our platform. Dive into the details of each item by simply
+                                now available for you to buy on our platform. Dive into the details of each item by simply
                                 clicking on its image.</p>
 
                         </div>

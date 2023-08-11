@@ -6,7 +6,7 @@ const CartReducer = (state, { type, payload }) => {
 
             const { singleProduct, amount } = payload;
 
-            let existing = state.cart?.find(curElem => {
+            let existing = state?.cart.find(curElem => {
                 return curElem._id === singleProduct._id
             })
 

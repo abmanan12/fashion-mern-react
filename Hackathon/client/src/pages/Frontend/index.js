@@ -23,8 +23,8 @@ export default function index() {
                     <Route path="/" element={<Hero />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/product" element={<Product />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/cart" element={<PrivateRoute Component={Cart} />} />
+                    <Route path="/checkout" element={<PrivateRoute Component={Checkout} />} />
                     <Route path="/contact" element={<PrivateRoute Component={Contact} />} />
                     <Route path="/singleproduct/:id" element={<PrivateRoute Component={SingleProduct} />} />
                 </Routes>

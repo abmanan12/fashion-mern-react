@@ -27,7 +27,7 @@ function Home() {
 
       <Nav Toggle={Toggle} />
 
-      <div className='container-fluid bg-hero min-vh-100' style={{ paddingTop: '86px' }}>
+      <div className='container-fluid bg-light min-vh-100' style={{ paddingTop: '86px' }}>
 
         <div className='row '>
 
@@ -39,7 +39,8 @@ function Home() {
             <div className='d-flex align-items-center p-4'>
               {toggle ? <IoIosArrowDropleft style={{ cursor: 'pointer', fontSize: '24px' }} onClick={Toggle} />
                 : <IoIosArrowDropright style={{ cursor: 'pointer', fontSize: '24px' }} onClick={Toggle} />}
-              <Link to='/' className='ms-3 text-green footer-link'>Home </Link><span className='d-none d-sm-inline-block'> / Dashbaord</span>
+                
+              <Link to='/' className='ms-3 text-Pa footer-link'>Home </Link><span className='d-none d-sm-inline-block'> / Dashbaord</span>
             </div>
 
             <div>

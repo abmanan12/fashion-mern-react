@@ -90,7 +90,7 @@ export default function AddProduct() {
 
                         <form onSubmit={handleSubmit}>
 
-                            <h3 className='text-center fw-bold text-green pt-4 pb-5'>Add Product</h3>
+                            <h3 className='text-center fw-bold text-H2 pt-4 pb-5'>Add Product</h3>
 
                             <div className="row">
                                 <div className="col-12 col-sm-6">
@@ -157,7 +157,7 @@ export default function AddProduct() {
 
                             <div className="row mt-4 mb-4 mb-sm-0">
                                 <div className="col">
-                                    <button className='btn btn-green text-light'>Add Product</button>
+                                    <button className='btn btn-hvr'>Add Product</button>
                                 </div>
                             </div>
                         </form>
